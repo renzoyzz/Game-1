@@ -12,7 +12,7 @@ var app = angular.module('Game', ['ngAnimate', 'ngRoute']).config(['$routeProvid
 		templateUrl: '/views/game.html',
 		controller: 'GameController'
 	})
-	.otherwise('/game');
+	.otherwise('/');
 
 	$locationProvider.html5Mode(true);
 
