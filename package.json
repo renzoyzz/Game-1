@@ -1,0 +1,19 @@
+{
+	"name": "helloworld",
+	"main": "index.html",
+	"window": {
+		"focus": true,
+		"resizable": false,
+		"title": "Game Test",
+		"icon": "link.png",
+		"toolbar": true,
+		"frame": true,
+		"position": "center",
+		"width": 800,
+		"height": 600,
+		"min_width": 800,
+		"min_height": 600,
+		"max_width": 1920,
+		"max_height": 1080
+	}
+}

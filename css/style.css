@@ -1,0 +1,222 @@
+@font-face {
+	font-family: 'BitFont';
+	font-style: normal;
+	font-weight: 400;
+	src: local('BitFont'), local('BitFont'), url(/content/fonts/BitFont.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+
+html {
+	width: 100vw;
+	height: 100vh;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	font-family: BitFont;
+	background-color: black;
+
+}
+
+#ngView {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	opacity: 1;
+	-webkit-user-select: none;
+
+}
+
+
+#ngView.ng-enter{
+	transition: all 1s ease .5s;
+	opacity: 0;
+}
+
+#ngView.ng-leave {
+	transition: all 1s ease;
+	opacity: 1;
+}
+
+#ngView.ng-enter.ng-enter-active {
+	opacity: 1;
+}
+
+#ngView.ng-leave.ng-leave-active {
+	opacity: 0;
+}
+
+.vc {
+	width: 100vw;
+	height: 100vh;
+}
+
+/*Start Splash Screen*/
+
+.splash-background {
+	background-image: url(/content/backgrounds/splashBackground.jpg);
+	background-size: 100% 100%;
+	background-position: center;
+	animation: spin 10s linear infinite;
+	width: 200%;
+	height: 200%;
+	top: -50%;
+	left: -50%;
+	position: fixed;
+	z-index: -1;
+}
+
+.logo-wrapper {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 350px;
+	height: 350px;
+	margin-left: -175px;
+	margin-top: -175px;
+	text-align: center;
+	background-color: orange;
+	border-radius: 50%;
+	border: 5px solid white;
+}
+
+.logo-container {
+	position: absolute;
+	width: 60%;
+	height: 242px;
+	left: 45%;
+	top: 40%;
+	margin-left: -25%;
+	margin-top: -25%;
+}
+
+.logo-img {
+	background-image: url(/content/backgrounds/Logo.png);
+	background-size: cover;
+	width: 210px;
+	height: 210px;
+}
+
+.splash-message {
+	position: relative;
+	right: 195px;
+	top: 100px;
+	width: 600px;
+	color: orange;
+	animation: blinker 2s linear infinite;
+}
+
+@keyframes spin { 100% {transform:rotate(360deg); } }
+@keyframes blinker  { 50% { opacity: 0.0; } }
+/*End Splash Screen*/
+
+/*Start Main Screen*/
+
+.main-container {
+	height: 80vh;
+	font-size: 2vw;
+	margin: 10vh auto;
+	text-align: center;
+}
+
+.main-title {
+	width: 90vw;
+	margin: auto;
+	font-size: 3vw;
+	background-color: white;
+	border: 5px solid orange;
+	padding: 20px 10px;
+}
+
+.choice-container {
+	width: 50vw;
+	background-color: white;
+	border: 5px solid orange;
+	padding: 20px 10px;
+	margin: 10px auto;
+	cursor: pointer;
+}
+
+.choice-container:hover {
+	transition: width 1s ease;
+	width: 55vw;
+	color: white;
+	background-color: gray;
+}
+/*End Main Screen*/
+
+/*Start Game Screen*/
+
+.dialogue-box-wrapper {
+	position: fixed;
+	bottom: 0px;
+	left: 0vw;
+	font-size: 2vh;
+	background-color: black;
+	color: white;
+	border: 5px solid white;
+	width: 100vw;
+	height: 35vh;
+	border-radius: 10px;
+	box-sizing: border-box;
+	padding: 5vw;
+
+}
+
+.dialogue-box-wrapper.ng-enter, .dialogue-box.ng-leave {
+	transition: all .75s ease;
+}
+
+.dialogue-box-wrapper.ng-leave.ng-leave-active, .dialogue-box-wrapper.ng-enter {
+	transform: translateY(100%);
+	opacity: 0;
+}
+
+.dialogue-box-wrapper.ng-enter.ng-enter-active, .dialogue-box-wrapper.ng-leave {
+	transform: translateY(0%);
+	opacity: 1;
+}
+
+.dialogue-box-container {
+	position: relative;
+}
+
+.dialogue-box-blinker {
+	animation: blinker 1s linear infinite;
+	width: 1vh;
+	height: 1vh;
+	background-color: white;
+	position: absolute;
+	bottom: -4vh;
+	right: -1vh;
+}
+
+.ui-container {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+}
+
+.ui-health-wrapper {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	width: 40vw;
+	height: 10vh;
+	background-color: white;
+}
+
+.ui-health-container {
+	margin: 3vh 3vh 0vh 0vh;
+}
+
+.ui-health {
+	text-align: center;
+	line-height: 5vh;
+	height: 5vh;
+	background-color: red;
+}
+/*End Game Screen*/
